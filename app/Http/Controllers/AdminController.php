@@ -192,6 +192,7 @@ class AdminController extends Controller
             ->get();
         return view('medicalreport', compact('patient', 'doctor','medicalreport'));
     }
+    
     public function medical_report_submit(Request $request)
     {
         $medicalreport = new MedicalReport();
