@@ -22,8 +22,19 @@
     </style>
 </head>
 <body>
+    
     <div class="homepage">
     <h1>Menu</h1>
+    <ul>
+    @if (Route::has('login'))
+    @auth
+        <x-app-layout>
+        </x-app-layout>
+    @else
+    <a href="{{route('login')}}"><b>Login</b></a><br>
+    <a href="{{route('register')}}"><b>Register</b></a><br>
+    @endauth
+    @endif
     <a href="{{route('patient')}}">Patient</a><br>
     <a href="{{route('vaccine')}}">Vaccine</a><br>
     <a href="{{route('allergy')}}">Allergy</a><br>
@@ -34,6 +45,11 @@
     <a href="{{route('medical_report')}}">Medical Report</a><br>
     <a href="{{route('prescription')}}">Prescription</a><br>
     <a href="{{route('medicine')}}">Medicine</a>
+    
+    
+    
+    </ul>
+
     </div>
 </body>
 </html>

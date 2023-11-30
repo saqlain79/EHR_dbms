@@ -7,7 +7,7 @@
 </head>
 <body>
 <h1><a href="{{route('index')}}">Home</a></h1>
-    <h1>Allergy Info</h1>
+    <h1>Medical Report</h1>
     <div>
     <form action="{{route('medical_report_submit')}}" method="POST">
         @csrf
@@ -78,6 +78,7 @@
                     <th>Heart Rate</th>
                     <th>Blood Oxygen</th>
                     <th>Remarks</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             @foreach($medicalreport as $mr)
@@ -97,6 +98,7 @@
                             <td>{{$mr->heart_rate}}</td>
                             <td>{{$mr->blood_oxygen}}</td>
                             <td>{{$mr->remarks}}</td>
+                            <td><a href="{{route('medical_report_delete',[$mr->patient_id,$mr->doctor_id])}}">Delete</a></td>
                         </tr>
                     </tbody>
             @endforeach

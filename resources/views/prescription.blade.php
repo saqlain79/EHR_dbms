@@ -7,7 +7,7 @@
 </head>
 <body>
 <h1><a href="{{route('index')}}">Home</a></h1>
-    <h1>Allergy Info</h1>
+    <h1>Prescription</h1>
     <div>
     <form action="{{route('prescription_submit')}}" method="POST">
         @csrf

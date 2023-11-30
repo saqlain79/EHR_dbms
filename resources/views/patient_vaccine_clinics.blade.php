@@ -67,6 +67,7 @@
                     <th>Vaccination Date</th>
                     <th>Dosage</th>
                     <th>Vaccine Administrator</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             
@@ -83,6 +84,7 @@
                                 <td>{{$p->vaccination_date}}</td>
                                 <td>{{$p->dosage}}</td>
                                 <td>{{$p->vaccine_administrator}}</td>
+                                <td><a href="{{route('patient_vaccine_clinic_delete', [$p->patient_id, $p->vaccine_id, $p->center_id])}}">Delete</a></td>
                             </tr>
                         </tbody>
                         
